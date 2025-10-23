@@ -87,7 +87,7 @@ export const DEFAULTS = {
   MAX_AMOUNT: 999999.99,
 };
 
-// Note: Redux Persist handles all localStorage operations automatically
+// Persist config
 
 // API endpoints (for future use)
 export const API_ENDPOINTS = {

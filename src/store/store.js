@@ -6,7 +6,7 @@ import expensesReducer from './slices/expensesSlice';
 import peopleReducer from './slices/peopleSlice';
 import themeReducer from './slices/themeSlice';
 
-// Create a safe storage wrapper that handles localStorage access errors
+// Safe storage wrapper
 const safeStorage = {
   getItem: (key) => {
     try {

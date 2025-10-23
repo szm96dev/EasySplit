@@ -4,7 +4,7 @@ import { Formik, Form } from 'formik';
 import { addPerson, updatePerson } from '../store/slices/peopleSlice';
 import { personSchema } from '../schemas';
 import { v4 as uuidv4 } from 'uuid';
-import { Modal, Input } from './common';
+import { Modal, FormInput } from './common';
 
 const PeopleModal = ({ isOpen, onClose, person = null }) => {
   const dispatch = useDispatch();
@@ -53,17 +53,18 @@ const PeopleModal = ({ isOpen, onClose, person = null }) => {
       >
         {({ isSubmitting }) => (
           <Form className="space-y-6">
-            <Input
+            <FormInput
               name="name"
+              type="text"
               label="Name"
               placeholder="Enter person's name"
               required
             />
 
-            <Input
+            <FormInput
               name="email"
-              label="Email (optional)"
               type="email"
+              label="Email (optional)"
               placeholder="Enter email address"
             />
 

@@ -1,12 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// Get initial theme from system preference or localStorage
 const getInitialTheme = () => {
-  // Check if we're in the browser
   if (typeof window === 'undefined') return false;
   
   try {
-    // Check localStorage first
     const savedTheme = localStorage.getItem('persist:root');
     if (savedTheme) {
       try {
@@ -18,7 +15,7 @@ const getInitialTheme = () => {
       }
     }
   } catch (error) {
-    // localStorage access denied, fallback to system preference
+    // Fallback to system preference
     console.warn('localStorage access denied, using system preference');
   }
   

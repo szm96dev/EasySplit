@@ -7,7 +7,7 @@ import { calculateEqualSplit, calculateWeightedSplit } from '../utils/calculatio
 import { expenseSchema } from '../schemas';
 import { SPLIT_TYPES } from '../constants';
 import { v4 as uuidv4 } from 'uuid';
-import { Modal, NumberInput, Input, MultiSelectInput, RadioInput } from './common';
+import { Modal, FormInput, MultiSelectInput, RadioInput } from './common';
 
 const ExpenseModal = ({ isOpen, onClose, expense = null }) => {
   const dispatch = useDispatch();
@@ -141,8 +141,9 @@ const ExpenseModal = ({ isOpen, onClose, expense = null }) => {
       >
         {({ isSubmitting, setFieldValue, values }) => (
           <Form className="space-y-6">
-            <NumberInput
+            <FormInput
               name="amount"
+              type="number"
               label="Amount ($)"
               placeholder="0.00"
               step="0.01"
@@ -150,8 +151,9 @@ const ExpenseModal = ({ isOpen, onClose, expense = null }) => {
               required
             />
 
-            <Input
+            <FormInput
               name="description"
+              type="text"
               label="Description"
               placeholder="What was this expense for?"
               required
